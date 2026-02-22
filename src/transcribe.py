@@ -82,7 +82,7 @@ class Transcriber:
                 language=language,
                 task=task,
                 fp16=(self.device == "cuda"),
-                verbose=False  # We will log ourselves
+                verbose=False
             )
             
             # Extract results
@@ -193,16 +193,16 @@ class Transcriber:
             unique_words = set(words)
             if len(words) > 0:
                 repetition_ratio = 1 - (len(unique_words) / len(words))
-                repetition_penalty = max(0, 1 - repetition_ratio * 2)  # Penalize high repetition
+                repetition_penalty = max(0, 1 - repetition_ratio * 2)
             else:
                 repetition_penalty = 0
             
             # Combined score (weighted)
             score = (
-                density * 0.3 +           # Content density
-                position_score * 0.25 +   # Good position
-                keyword_score * 0.25 +    # Important keywords
-                repetition_penalty * 0.2  # Not repetitive
+                density * 0.3 +
+                position_score * 0.25 +
+                keyword_score * 0.25 +
+                repetition_penalty * 0.2
             )
             
             if score > best_score:
@@ -229,11 +229,7 @@ class Transcriber:
                 "segments": []
             }
         
-        logger.info(f"Best segment found:")
-        logger.info(f"  Time: {best_window['start']:.1f}s - {best_window['end']:.1f}s")
-        logger.info(f"  Duration: {best_window['duration']:.1f}s")
-        logger.info(f"  Score: {best_window['score']:.3f}")
-        logger.info(f"  Preview: {best_window['text'][:100]}...")
+        logger.info(f"Best segment found: {best_window['start']:.1f}s - {best_window['end']:.1f}s")
         
         return best_window
     
@@ -241,38 +237,19 @@ class Transcriber:
                         transcription: Dict,
                         start: float,
                         end: float) -> str:
-        """
-        Get full text for a specific time range.
-        
-        Args:
-            transcription: Full transcription
-            start: Start time in seconds
-            end: End time in seconds
-            
-        Returns:
-            Combined text for that time range
-        """
+        """Get full text for a specific time range."""
         segments = transcription.get("segments", [])
-        
-        # Find overlapping segments
         overlapping = [
             s for s in segments
             if not (s["end"] < start or s["start"] > end)
         ]
-        
         texts = [s["text"].strip() for s in overlapping]
         return " ".join(texts)
     
     def save_transcription(self,
                           transcription: Dict,
                           output_path: str):
-        """
-        Save transcription to JSON file.
-        
-        Args:
-            transcription: Transcription dictionary
-            output_path: Path to save JSON
-        """
+        """Save transcription to JSON file."""
         output_path = str(output_path)
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
         
@@ -290,17 +267,7 @@ class Transcriber:
 def quick_transcribe(video_path: str, 
                     output_json: Optional[str] = None,
                     model_size: str = "large-v3") -> Dict:
-    """
-    Quick transcription without creating class instance.
-    
-    Args:
-        video_path: Path to video
-        output_json: Optional path to save JSON
-        model_size: Whisper model size
-        
-    Returns:
-        Transcription dictionary
-    """
+    """Quick transcription without creating class instance."""
     t = Transcriber(model_size=model_size)
     result = t.transcribe(video_path)
     
@@ -311,23 +278,10 @@ def quick_transcribe(video_path: str,
 
 
 if __name__ == "__main__":
-    # Test with a sample
     import sys
-    
     if len(sys.argv) > 1:
         video = sys.argv[1]
         output = sys.argv[2] if len(sys.argv) > 2 else "transcription.json"
-        
-        print(f"Transcribing: {video}")
         result = quick_transcribe(video, output)
-        
-        print(f"\nDetected language: {result['language']}")
+        print(f"Language: {result['language']}")
         print(f"Duration: {result['duration']:.2f}s")
-        print(f"Segments: {len(result['segments'])}")
-        
-        # Find best segment
-        t = Transcriber()
-        best = t.find_best_segment(result)
-        print(f"\nBest 15s segment: {best['start']:.1f}s - {best['end']:.1f}s")
-    else:
-        print("Usage: python transcribe.py <video_path> [output_json]")
