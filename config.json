@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "device": "cuda",
+  "gpu_name": "Tesla T4",
+  "paths": {
+    "base": "/content/supernan_dubbing/supernan-ai-dubbing-",
+    "data": "/content/supernan_dubbing/supernan-ai-dubbing-/data",
+    "output": "/content/supernan_dubbing/supernan-ai-dubbing-/data/output",
+    "models": "/content/supernan_dubbing/supernan-ai-dubbing-/models"
+  },
+  "whisper_model": "large-v3",
+  "translation_model": "AI4Bharat/IndicTrans2",
+  "xtts_model": "tts_models/multilingual/multi-dataset/xtts_v2",
+  "default_target": "hi"
+}
