@@ -1,0 +1,49 @@
+# Core AI/ML
+openai-whisper>=20231117
+torch>=2.0.0
+torchaudio
+transformers>=4.30.0
+accelerate
+sentencepiece
+sacremoses
+
+# Audio processing
+librosa>=0.10.0
+soundfile>=0.12.0
+noisereduce
+audiostretchy
+
+# Video processing
+opencv-python>=4.8.0
+imageio>=2.31.0
+imageio-ffmpeg
+ffmpeg-python
+
+# TTS / Voice Cloning
+TTS>=0.22.0
+coqpit
+
+# Face processing
+gfpgan>=1.3.0
+realesrgan
+
+# Lip Sync (Wav2Lip)
+# Note: Will install from GitHub in setup script
+
+# Web App
+streamlit>=1.28.0
+pyngrok
+
+# Utilities
+numpy>=1.24.0
+pandas
+tqdm
+pyyaml
+python-dotenv
+requests
+gdown
+
+# Development
+pytest
+black
+flake8
