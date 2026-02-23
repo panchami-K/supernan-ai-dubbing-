@@ -8,12 +8,15 @@ __author__ = "Panchami K"
 
 from .config import Config, get_config
 from .video_utils import VideoProcessor, AudioProcessor, get_video_info, extract_segment
+from .transcribe import Transcriber, quick_transcribe
 
 __all__ = [
-    "Config",
+    "Config", 
     "get_config",
     "VideoProcessor",
-    "AudioProcessor",
+    "AudioProcessor", 
     "get_video_info",
-    "extract_segment"
+    "extract_segment",
+    "Transcriber",
+    "quick_transcribe"
 ]
