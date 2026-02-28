@@ -85,3 +85,20 @@ Email: panchamik12345@gmail.com
 GitHub: @panchami-K
 📜 License
 MIT License - see LICENSE file
+
+
+## ✅ True visual lip-sync (important)
+If your output is only **video + dubbed audio** but lips do not move, the model did not run.
+Use the built-in CLI below, which calls VideoReTalking directly and fails loudly (no fake fallback):
+
+```bash
+python dub_video.py   --face data/temp/segment_37_52.mp4   --audio output/hindi_dubbed.wav   --output output/final_hindi_lipsync.mp4
+```
+
+### Why your previous notebook produced no lip-sync
+- It generated a custom `inference_simple.py` that draws synthetic mouth ellipses instead of running the real model.
+- It used placeholder checkpoint IDs for several models.
+- Dependency install errors were ignored, so execution continued in a broken environment.
+- On failure it silently fell back to ffmpeg audio replacement.
+
+The updated pipeline removes silent fallback for this step so failures are visible and actionable.
