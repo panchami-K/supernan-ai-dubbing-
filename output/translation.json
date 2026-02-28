@@ -4,9 +4,10 @@
     "end": 52.0,
     "duration": 15.0
   },
-  "english_text": " Because you are always around your child.  Your child is very close to you.  So if you smell from your body or mouth, children will not like it.  They will fight with you if they do not come close to you.  Or you can complain to your parents.",
-  "hindi_text": "क्योंकि आप हमेशा अपने बच्चे के आसपास रहते हैं। आपका बच्चा बहुत करीब है। यदि आप अपने शरीर या मुंह से गंध करते हैं, तो बच्चे इसे पसंद नहीं करेंगे। अगर वे आपके पास नहीं आए तो वे आपसे लड़ेंगे। या आप अपने माता-पिता को शिकायत कर सकते हैं।",
+  "english_text": "Because you are always around your child.  Your child is very close to you.  So if you smell from your body or mouth, children will not like it.  They will fight with you if they do not come close to you.  Or you can complain to your parents.",
+  "hindi_text": "क्योंकि आप हमेशा अपने बच्चे के आसपास रहते हैं।  आपका बच्चा आपके बहुत करीब है.  इसलिए अगर आपके शरीर या मुंह से बदबू आती है तो बच्चों को यह पसंद नहीं आएगा।  अगर वे आपके करीब नहीं आएंगे तो वे आपसे लड़ेंगे।  या आप अपने माता-पिता से शिकायत कर सकते हैं।",
   "source_language": "en",
   "target_language": "hi",
-  "pdf_compliant": true
+  "pdf_compliant": true,
+  "translation_method": "AI-Powered (IndicTrans2/Google)"
 }
