@@ -1,8 +1,9 @@
 {
   "output_video": "/content/supernan_dubbing/supernan-ai-dubbing-/output/final_hindi_lipsync.mp4",
   "duration": 15.003,
-  "method": "Wav2Lip",
-  "has_visual_lipsync": true,
+  "method": "audio_replacement",
+  "has_visual_lipsync": false,
+  "model": "none",
   "input_video": "/content/supernan_dubbing/supernan-ai-dubbing-/data/temp/segment_37_52.mp4",
   "input_audio": "/content/supernan_dubbing/supernan-ai-dubbing-/output/hindi_dubbed.wav"
 }
