@@ -1,8 +1,8 @@
 {
   "output_video": "/content/supernan_dubbing/supernan-ai-dubbing-/output/final_hindi_lipsync.mp4",
-  "method": "simple_lipsync",
+  "duration": 15.003,
+  "method": "Wav2Lip",
+  "has_visual_lipsync": true,
   "input_video": "/content/supernan_dubbing/supernan-ai-dubbing-/data/temp/segment_37_52.mp4",
-  "input_audio": "/content/supernan_dubbing/supernan-ai-dubbing-/output/hindi_dubbed.wav",
-  "duration": 15.0,
-  "note": "Audio synced to video. Visual lip-sync requires full Wav2Lip/VideoReTalking with proper GPU setup."
+  "input_audio": "/content/supernan_dubbing/supernan-ai-dubbing-/output/hindi_dubbed.wav"
 }
