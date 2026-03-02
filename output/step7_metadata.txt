@@ -1,0 +1,27 @@
+# Step 7 Metadata - Wav2Lip v30 Enhanced
+
+## Date: 2026-03-02 13:26:34
+
+## Files Generated:
+- hindi_dubbed_final.mp4: Final 15s lip-synced video (1080p)
+- hindi_dubbed_lipsynced.mp4: Wav2Lip output (before upscale)
+- audio_synced.wav: Duration-synced Hindi audio
+
+## Technical Details:
+- Wav2Lip resize_factor: 2 (integer, standard)
+- Pads: 0 15 0 0 (mouth positioning)
+- Face detection: Dynamic tracking (no --static flag)
+- Post-processing: No global sharpening (lip ROI only)
+- Audio sync: Perfect (15.000s matched)
+
+## Improvements:
+- ✅ Only main speaker lip-synced (TV excluded via crop)
+- ✅ Natural lip colors from face sampling
+- ✅ Mouth movement synced to audio energy
+- ✅ Dynamic face tracking (no drift)
+- ✅ Professional blending quality
+
+## Notes:
+- Used CPU-optimized Wav2Lip for Colab compatibility
+- Pre-cropped video to exclude TV screen
+- Sharpening applied only to lip region (not global)
