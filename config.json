@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "device": "cpu",
-  "gpu_name": null,
+  "device": "cuda",
+  "gpu_name": "Tesla T4",
   "paths": {
     "base": "/content/supernan_dubbing/supernan-ai-dubbing-",
     "data": "/content/supernan_dubbing/supernan-ai-dubbing-/data",
